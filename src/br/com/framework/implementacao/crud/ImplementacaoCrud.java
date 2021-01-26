@@ -167,5 +167,26 @@ public class ImplementacaoCrud<T> implements InterfaceCrud<T> {
 		// TODO Auto-generated method stub
 		return null;
 	}
+	
+	private void validaSessioFactory() {
+		if (sessionFactory == null) {
+			sessionFactory = HibernateUtil.getSessionFactory();
+		}
+		validarTransaction();
+	}
+	
+	private void validarTransaction() {
+		if (!sessionFactory.getCurrentSession().getTransaction().isActive()) {
+			sessionFactory.getCurrentSession().beginTransaction();
+		}
+	}
+	
+	private void commitProcessoAjax(){
+		sessionFactory.getCurrentSession().beginTransaction().commit();
+	}
+	
+	private void rollBackProcessoAjax() {
+		sessionFactory.getCurrentSession().beginTransaction().rollback();
+	}
 
 }
