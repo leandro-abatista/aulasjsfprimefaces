@@ -129,6 +129,8 @@ public interface InterfaceCrud<T> extends Serializable {
 	
 	Query obterQuery(String query) throws Exception;
 	
+	List<Object[]> getListSQLDinamicArray(String sql) throws Exception;
+	
 	/**
 	 * usado para carregar lista por demanda, ou carregamento dinâmico
 	 * @param query
