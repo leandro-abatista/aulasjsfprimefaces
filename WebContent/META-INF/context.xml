@@ -21,5 +21,9 @@
 		password="admin"
 		url="jdbc:postgresql://localhost:5432/ebook_jee?autoReconect=true"
 	/>
+	
+<!-- Classe do tomcat que está lendo esse arquivo é org.apache.tomcat.dbcp.PoolingDataSource -->
+<!-- POOL DE CONEXÕES -->
+<!-- hhtps://tomcat.apache.org/tomcat-7.0-doc/jdbc-pool.html -->
 
 </Context>
