@@ -52,7 +52,7 @@ public abstract class Messagens extends FacesContext implements Serializable{
 		}
 	}
 	
-	public static void msgSeverityInf(String msg) {
+	public static void msgSeverityInfor(String msg) {
 		if (facesContextValido()) {
 			getFacesContext().addMessage("msg", new FacesMessage(FacesMessage.SEVERITY_INFO, msg, msg));
 		}
