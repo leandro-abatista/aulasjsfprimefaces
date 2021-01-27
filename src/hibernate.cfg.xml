@@ -23,6 +23,18 @@
 		<property name="hibernate.generate_statistics">false</property>
 		<property name="hibernate.connection.autocommit">false</property>
 		<property name="hibernate.connection.pool_size">50</property>
+		
+		<mapping class=""/>
+		
+		<!-- configuração para um objeto -->
+		<listener class="org.hibernate.envers.event.AuditEventListener" type="post-insert"/>
+		<listener class="org.hibernate.envers.event.AuditEventListener" type="post-update"/>
+		<listener class="org.hibernate.envers.event.AuditEventListener" type="post-delete"/>
+		
+		<!-- configuração para uma lista de objetos -->
+		<listener class="org.hibernate.envers.event.AuditEventListener" type="post-collection-recreate"/>
+		<listener class="org.hibernate.envers.event.AuditEventListener" type="post-collection-update"/>
+		<listener class="org.hibernate.envers.event.AuditEventListener" type="post-collection-remove"/>
 	
 	</session-factory>
 	
