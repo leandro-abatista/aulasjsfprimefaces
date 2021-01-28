@@ -23,7 +23,7 @@ public abstract class Messagens extends FacesContext implements Serializable{
 	}
 	
 	public static void sucesso() {
-		msgSeverityInf(Constante.OPERACAO_REALIZADA_COM_SUCESSO);
+		msgSeverityInfor(Constante.OPERACAO_REALIZADA_COM_SUCESSO);
 	}
 	
 	public static void erroNaOperacao() {
