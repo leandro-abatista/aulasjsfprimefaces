@@ -11,10 +11,9 @@ import javax.faces.context.ExceptionHandlerWrapper;
 import javax.faces.context.FacesContext;
 import javax.faces.event.ExceptionQueuedEvent;
 import javax.faces.event.ExceptionQueuedEventContext;
-import javax.swing.text.StyledEditorKit.ItalicAction;
 
 import org.hibernate.SessionFactory;
-import org.primefaces.context.RequestContext;
+
 
 import br.com.framework.hibernate.util.HibernateUtil;
 
