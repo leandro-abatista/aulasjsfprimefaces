@@ -95,6 +95,6 @@
 	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/taglib-core-0.4.jar"/>
 	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/xmlbeans-1.0.3.jar"/>
 	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/primefaces-7.0.jar"/>
-	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/postgresql-9.4.1212.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/postgresql-42.2.18.jar"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>
