@@ -17,9 +17,9 @@
 		minEvictableIdleTimeMillis="60000"
 		antiJARLocking="false"
 		antiResourceLocking="false"
-		username="caixaki"
+		username="postgres"
 		password="admin"
-		url="jdbc:postgresql://localhost:5432/ebook_jee?autoReconect=true"
+		url="jdbc:postgresql://localhost:5432/db_cursojava?autoReconect=true"
 	/>
 	
 <!-- Classe do tomcat que está lendo esse arquivo é org.apache.tomcat.dbcp.PoolingDataSource -->
