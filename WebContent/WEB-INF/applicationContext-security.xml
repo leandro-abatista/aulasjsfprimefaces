@@ -31,14 +31,41 @@
  		logout-url="/j_spring_security_logout"
  		delete-cookies="JSESSIONID"/>
  		
- 		<!-- Lembrar por meia hora mais ou menos -->
- 		<remember-me token-validity-seconds="1209600"/>
+ 		<!-- Lembrar por meia hora -->
+ 		<remember-me token-validity-seconds="1800"/>
  		
  		<session-management invalid-session-url="/publico/login.jsf" session-fixation-protection="migrateSession">
  			<concurrency-control max-sessions="1" expired-url="/publico/login.jsf" error-if-maximum-exceeded="true"/>
  		</session-management>
  		
- 		
  	</http>
+ 	
+ 	<!-- Configuração com o banco de dados que no caso é o postgresql -->
+ 	<authentication-manager>
+ 		<authentication-provider>
+ 			<password-encoder hash="plaintext"/>
+ 			<jdbc-user-service data-source-ref="springDataSource"
+ 				
+ 				users-by-username-query="select ent_login as username,
+											ent_senha as password,
+											'true' as enable
+											from entidade
+											where ent_inativo = false
+											and upper(ent_login) = upper(?)"
+ 				
+ 				
+ 				authorities-by-username-query="select u.ent_login as username,
+												p.esa_codigo as authority
+												from entidade u
+												join entidadeacesso p
+												on u.ent_codigo = p.ent_codigo
+												where u.ent_inativo = false
+												and upper(u.ent_login) = upper(?)"
+ 				
+ 				/>
+ 				
+ 				
+ 		</authentication-provider>
+ 	</authentication-manager>
  
  </b:beans>
