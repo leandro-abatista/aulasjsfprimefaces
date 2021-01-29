@@ -108,9 +108,60 @@
 		<constructor-arg name="dataSource" ref="springDataSource" />
 	</bean>
 
-	<!-- Mapeamento das páginas -->
-
-
-
-
+	<!-- Mapeamento das páginas jsp, caso venha utilizar e também será usado para a página index.jsp -->
+	<bean id="urlMapping" 
+		class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping" 
+		lazy-init="false">
+		
+		<property name="mappings">
+			<props>
+			<prop key="/index.jsp">indexController</prop>
+			</props>
+		</property>
+	</bean>
+	
+	<!-- Mapeamento caso venha utilizar jsp -->
+	<bean id="viewResolver" 
+		class="org.springframework.web.servlet.view.InternalResourceViewResolver" 
+		lazy-init="false">
+		
+		<property name="viewClass" value="org.springframework.web.servlet.view.JstlView"/>
+		<property name="prefix" value="/WebContent/"/>
+		<property name="suffix" value="*.jsf, *.xhtml, *.html, *.jsp, *.js"/>
+	</bean>
+	
+	<!-- Mapeamento caso venha utilizar jsp -->
+	<bean id="indexController" class="org.springframework.web.servlet.mvc.ParameterizableViewController"/>
+	
+	<!-- Mapeamento caso venha utilizar jsp -->
+	<bean class="org.springframework.beans.factory.config.CustomScopeConfigurer" lazy-init="false">
+		<property name="scopes">
+			<map>
+				<entry key="view">
+					<bean class="br.com.project.bean.geral.ViewScope"/>
+				</entry>
+			</map>
+		</property>
+	</bean>
+	
+	<!-- Bean de contexto application 
+	<bean id="contextoBean" class="br.com.project.bean.view.ContextoBean"/>
+	-->
+	
+	<!-- Report Util -->
+	<bean id="reportUtil" class="br.com.project.report.util.ReportUtil"/>
+	
+	<!-- Controla o usuário da sessão -->
+	<bean id="utilFramework" class="br.com.framework.utils.UtilFramework" scope="session"/>
+	
+	
+	<!-- Classes Controller -->
+	
+	
+	<!-- Classes Repository -->
+	
+	
+	<!-- Classes Service -->
+	
+	
 </beans>
