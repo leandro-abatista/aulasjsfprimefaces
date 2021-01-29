@@ -53,13 +53,10 @@
 		class="org.springframework.jndi.JndiObjectFactoryBean"
 		lazy-init="false">
 
-		<property name="jndiName">
-			java:/comp/env/jdbc/datasource
-		</property>
-
+		<property name="jndiName">java:/comp/env/jdbc/datasource</property>
 	</bean>
 
-	<!-- Falway -->
+	<!-- Flyway -->
 	<bean id="flyway" class="org.flywaydb.core.Flyway"
 		init-method="migrate" lazy-init="false">
 		<property name="dataSource" ref="springDataSource" />
