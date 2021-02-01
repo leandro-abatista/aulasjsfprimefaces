@@ -45,12 +45,11 @@
 	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/jasperreports-5.6.0.jar"/>
 	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/javassist-3.12.0.GA.jar"/>
 	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/javax.mail-1.5.5.jar"/>
-	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/javax.validation_1.0.0.GA_v201205091237.jar"/>
 	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/jcip-annotations-1.0.jar"/>
 	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/jcl-over-slf4j-1.6.1.jar"/>
 	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/jcommon-1.0.17.jar"/>
 	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/jfreechart-1.0.14.jar"/>
-	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/jsf-api-2.2.7.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/jsf-api-2.2.20.jar"/>
 	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/jsf-facelets.jar"/>
 	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/jsf-impl-2.2.7.jar"/>
 	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/jstl-1.2.jar"/>
@@ -67,12 +66,13 @@
 	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/poi-ooxml-3.9-20121203.jar"/>
 	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/poi-ooxml-schemas-3.9-20121203.jar"/>
 	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/poi-scratchpad-3.9-20121203.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/postgresql-42.2.18.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/primefaces-6.2.jar"/>
 	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/qrcode.jar"/>
 	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/redmond-1.0.1.jar"/>
 	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/shared-bouncycastle-reduced-0.9.12.jar"/>
 	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/slf4j-api-1.6.1.jar"/>
 	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/slf4j-simple-1.6.1.jar"/>
-	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/smoothness-1.0.10.jar"/>
 	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/spring-aop-3.0.5.RELEASE.jar"/>
 	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/spring-asm-3.0.5.RELEASE.jar"/>
 	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/spring-beans-3.0.5.RELEASE.jar"/>
@@ -94,7 +94,8 @@
 	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/start-1.0.1.jar"/>
 	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/taglib-core-0.4.jar"/>
 	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/xmlbeans-1.0.3.jar"/>
-	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/primefaces-7.0.jar"/>
-	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/postgresql-42.2.18.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/hibernate-validator-6.1.0.Final.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/smoothness-1.0.10.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/delta-1.0.10.jar"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>
