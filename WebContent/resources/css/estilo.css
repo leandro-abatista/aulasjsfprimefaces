@@ -6,11 +6,23 @@
 	
 }
 
+body{
+	background-color: #C0C0C0;
+}
+
+
 .buttonPesquisa {
 	height: 20px;
 	width: 23px;
 	margin-left: 1px;
 	margin-right: 1px;
+}
+
+.estiloBotao{
+	height: 40px;
+	width: 100px;
+	background: #cdcdc1;
+	border: 1px;
 }
 
 .buttonAdiciona {
@@ -233,7 +245,7 @@ a:focus {
 #keyslogin {
 	position: absolute;
 	bottom: 35px;
-	right: 240px;
+	right: 300px;
 	z-index: 999;
 }
 

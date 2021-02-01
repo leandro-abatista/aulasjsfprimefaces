@@ -11,6 +11,7 @@
  	
  	<!-- Configuração de acesso as partes do sistema com spring security -->
  	<http auto-config="true" access-denied-page="/error/acessoNegado.xhtml" use-expressions="true">
+ 	
  		<intercept-url pattern="/cadastro/cad_permissao.jsf" access="hasAnyRole('ADMIN')" method="POST"/>
  		<intercept-url pattern="/resources/components/**" access="isAuthenticated() and hasAnyRole('USER')"/>
  		<intercept-url pattern="/resources/**" access="isAuthenticated() and hasAnyRole('USER')"/>
