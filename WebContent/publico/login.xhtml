@@ -43,9 +43,9 @@
 				rendered="#{SPRING_SECURITY_LAST_EXCEPTION.message == 'Maximum sessions of 1 for this principal exceeded'}">
 				<span class="estiloSpan">Você está logado em outra sessão. </span>
 				
-				<h:commandButton value="Encerrar"
-					style="height:40px; width:100px; background:#CDCDC1; border-radius: 5px; font-weight: bold;"
-					onclick="invalidarSession('#{request.contextPath}', '/publico/invalidateSession')" />
+				<p:commandButton value="Encerrar"
+				style="height:40px; width:100px; border-radius: 5px; font-weight: bold;"
+				onclick="invalidarSession('#{request.contextPath}', '/publico/invalidateSession')"/>
 			</h:outputLabel>
 
 		</h:panelGroup>

@@ -1,4 +1,4 @@
-function invalidateSession(context, pagina) {
+function invalidarSession(context, pagina) {
 	document.location = (context + pagina + ".jsf");
 }
 
@@ -19,4 +19,6 @@ function validarSenhaLogin() {
 		$('#j_password').focus();
 		return false;
 	}
+	
+	return true;
 }

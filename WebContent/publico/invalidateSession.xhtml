@@ -26,7 +26,7 @@
 <h:form id="form" prependId="false">
 
 	<script type="text/javascript" charset="UTF-8">
-		$.noConflict();/*Evita conflito entre bibliotecas*/
+		$.noConflit();/*Evita conflito entre bibliotecas*/
 	</script>
 	
 	
@@ -56,23 +56,22 @@
 	</h:body>
 	
 <script>
+		$(function () {
+			PF('dlg').show();
+		}); 
 
-	$(function() {
-		PF('dlg').show();
-	});
+		function handlerLoginRequest(xhr, status, args) {
 
-	function handleLoginRequest(xhr, status, args) {
+			/* apenas um teste na tela -> alert(args.msgRetorno);*/
 
-		if (!args.loggedIn) {
-			alert('O pedido de encerrar sessão foi negada!');
-			PF('dlg').jq.effect("shake", {times:5}, 100);
-		} else {
-			PF('dlg').hide();
-			logout('#{request.contextPath}');
+			if(!args.loggedIn){
+				PF('dlg').jq.effect("shake"), {times:5}, 100;
+			} else {
+				PF('dlg').hide();
+				document.location = '#{request.contextPath}' + "/j_spring_security_logout";
+			}
 		}
-	}
-	
-</script>
+	</script>
 
 </h:form>
 

@@ -12,49 +12,6 @@
 		<welcome-file>index.jsp</welcome-file>
 	</welcome-file-list>
 	
-	<session-config>
-		<!-- Em 15 minutos invalida a sessão e pede para realizar o login novamente -->
-		<session-timeout>15</session-timeout>
-		<tracking-mode>COOKIE</tracking-mode>
-	</session-config>
-	
-	<error-page>
-		<exception-type>org.springframework.security.access.AccessDeniedException</exception-type>
-		<location>/error/acessoNegado.jsf</location>
-	</error-page>
-	
-	<error-page>
-		<exception-type>com.sun.faces.context.FacesFileNotFoundException</exception-type>
-		<location>/error/paginaNaoEncontrada.jsf</location>
-	</error-page>
-	
-	<error-page>
-		<error-code>403</error-code>
-		<location>/error/acessoNegado.jsf</location>
-	</error-page>
-	
-	<error-page>
-		<error-code>404</error-code>
-		<location>/error/404.jsf</location>
-	</error-page>
-	
-	<error-page>
-		<error-code>500</error-code>
-		<location>/error/error.jsf</location>
-	</error-page>
-	
-	<jsp-config>
-		<jsp-property-group>
-			<url-pattern>/**</url-pattern>
-			<el-ignored>false</el-ignored>
-		</jsp-property-group>
-	</jsp-config>
-	
-	<context-param>
-		<param-name>javax.faces.FACELETS_SKIP_COMMENTS</param-name>
-		<param-value>true</param-value>
-	</context-param>
-	
 	<context-param>
 		<param-name>com.sun.faces.allowTextChildren</param-name>
 		<param-value>true</param-value>
@@ -68,15 +25,15 @@
 	<context-param>
 		<param-name>contextConfigLocation</param-name>
 		<param-value>
-				/WEB-INF/applicationContext.xml 
-				/WEB-INF/spring-servlet-servlet.xml
-				/WEB-INF/applicationContext-security.xml
+			/WEB-INF/applicationContext.xml
+			/WEB-INF/spring-servlet-servlet.xml
+			/WEB-INF/applicationContext-security.xml
 		</param-value>
 	</context-param>
 	
 	<context-param>
-		<param-name>javax.faces.FACELETS_REFRESH_PERIOD</param-name>
-		<param-value>0</param-value><!-- tempo em segundos -->
+		<param-name>javax.faces.CONFIG_FILES</param-name>
+		<param-value>/WEB-INF/faces-config.xml</param-value>
 	</context-param>
 	
 	<context-param>
@@ -84,6 +41,15 @@
 		<param-value>.xhtml .html .jsp</param-value>
 	</context-param>
 	
+	<context-param>
+		<param-name>javax.faces.FACELETS_REFRESH_PERIOD</param-name>
+		<param-value>0</param-value>
+	</context-param>
+	
+	<context-param>
+		<param-name>javax.faces.FACELETS_SKIP_COMMENTS</param-name>
+		<param-value>true</param-value>
+	</context-param>
 	<context-param>
 		<param-name>javax.faces.PROJECT_STAGE</param-name>
 		<param-value>Production</param-value>
@@ -114,28 +80,27 @@
 	</filter>
 	
 	<filter>
-	    <filter-name>PrimeFaces FileUpload Filter</filter-name>
-	    <filter-class>org.primefaces.webapp.filter.FileUploadFilter</filter-class>
-  	</filter>
-  	
-  	<filter-mapping>
-  		<filter-name>encoding-filter</filter-name>
-  		<url-pattern>/*</url-pattern>
-  	</filter-mapping>
-  	
-  	<filter-mapping>
-  		<filter-name>conexaoFilter</filter-name>
-  		<url-pattern>/*</url-pattern>
-  	</filter-mapping>
-  	
-  	<filter-mapping>
-  		<filter-name>springSecurityFilterChain</filter-name>
-  		<url-pattern>/*</url-pattern>
-  	</filter-mapping>
+		<filter-name>PrimeFaces FileUpload Filter</filter-name>
+		<filter-class>org.primefaces.webapp.filter.FileUploadFilter</filter-class>
+	</filter>
+	
+	<filter-mapping>
+		<filter-name>encoding-filter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+	
+	<filter-mapping>
+		<filter-name>conexaoFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+	
+	<filter-mapping>
+		<filter-name>springSecurityFilterChain</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
 	
 	<filter-mapping>
 		<filter-name>PrimeFaces FileUpload Filter</filter-name>
-		<servlet-name>Faces Servlet</servlet-name>
 		<url-pattern>*.jsf</url-pattern>
 	</filter-mapping>
 	
@@ -158,15 +123,48 @@
 	
 	<servlet-mapping>
 		<servlet-name>Faces Servlet</servlet-name>
-    	<url-pattern>*.jsf</url-pattern>
+		<url-pattern>*.jsf</url-pattern>
 	</servlet-mapping>
+	
+	<session-config>
+		<session-timeout>15</session-timeout>
+		<tracking-mode>COOKIE</tracking-mode>
+	</session-config>
+	
+	<error-page>
+		<exception-type>org.springframework.security.access.AccessDeniedException</exception-type>
+		<location>/error/acessoNegado.jsf</location>
+	</error-page>
+	
+	<error-page>
+		<exception-type>com.sun.faces.context.FacesFileNotFoundException</exception-type>
+		<location>/error/paginaNaoEncontrada.jsf</location>
+	</error-page>
+	
+	<error-page>
+		<exception-type>403</exception-type>
+		<location>/error/acessoNegado.jsf</location>
+	</error-page>
+	
+	<error-page>
+		<exception-type>404</exception-type>
+		<location>/error/404.jsf</location>
+	</error-page>
+	
+	<error-page>
+		<exception-type>500</exception-type>
+		<location>/error/error.jsf</location>
+	</error-page>
+	
+	<jsp-config>
+		<jsp-property-group>
+			<url-pattern>/**</url-pattern>
+			<el-ignored>false</el-ignored>
+		</jsp-property-group>
+	</jsp-config>
 	
 	<listener>
 		<listener-class>br.com.project.listener.ContextLoaderListenerCaixakiUtils</listener-class>
-	</listener>
-	
-	<listener>
-		<listener-class>org.springframework.web.context.request.RequestContextListener</listener-class>
 	</listener>
 	
 	<listener>
@@ -174,11 +172,15 @@
 	</listener>
 	
 	<listener>
+		<listener-class>org.springframework.web.context.request.RequestContextListener</listener-class>
+	</listener>
+	
+	<listener>
 		<listener-class>org.springframework.security.web.session.HttpSessionEventPublisher</listener-class>
 	</listener>
 	
 	<resource-ref>
-		<description>DataSource datasouce</description>
+		<description>DataSource datasource</description>
 		<res-ref-name>jdbc/datasource</res-ref-name>
 		<res-type>javax.sql.DataSource</res-type>
 		<res-auth>Container</res-auth>
