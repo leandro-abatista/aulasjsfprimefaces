@@ -9,13 +9,13 @@ function validarSenhaLogin() {
 	
 	
 	if (j_username === null || j_username.trim() === '') {
-		alert("Informe Login");
+		alert("Informe o Login!");
 		$('#j_username').focus();
 		return false;
 	}
 	
 	if (j_password === null || j_password.trim() === '') {
-		alert("Informe Senha");
+		alert("Informe a Senha!");
 		$('#j_password').focus();
 		return false;
 	}

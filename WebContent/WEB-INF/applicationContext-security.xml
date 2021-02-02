@@ -33,7 +33,7 @@
  		delete-cookies="JSESSIONID"/>
  		
  		<!-- Lembrar por meia hora -->
- 		<remember-me token-validity-seconds="1800"/>
+ 		<remember-me token-validity-seconds="1209600"/>
  		
  		<session-management invalid-session-url="/publico/login.jsf" session-fixation-protection="migrateSession">
  			<concurrency-control max-sessions="1" expired-url="/publico/login.jsf" error-if-maximum-exceeded="true"/>

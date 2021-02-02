@@ -42,8 +42,9 @@
 			<h:outputLabel
 				rendered="#{SPRING_SECURITY_LAST_EXCEPTION.message == 'Maximum sessions of 1 for this principal exceeded'}">
 				<span class="estiloSpan">Você está logado em outra sessão. </span>
+				
 				<h:commandButton value="Encerrar"
-					style="height:40px; width:100px; background:#CDCDC1; border: 2px; border-radius: 5px;"
+					style="height:40px; width:100px; background:#CDCDC1; border-radius: 5px; font-weight: bold;"
 					onclick="invalidarSession('#{request.contextPath}', '/publico/invalidateSession')" />
 			</h:outputLabel>
 
@@ -75,9 +76,13 @@
 			<span style="display: block; padding-top: 2px; text-align: right">
 			
 				<span id="enviando"></span>
+				
 				<button type="submit" class="blue" 
-				style="height: 40px; width: 120px; background: #CDCDC1; border: 2px; border-radius: 5px; "
-				id="buttonLogin">Entrar</button>
+				style="height: 40px; width: 120px; background: #CDCDC1; border: 2px; border-radius: 5px; font-weight: bold; padding-top: 5px;"
+				id="buttonLogin">
+					Entrar
+				</button>
+				
 			</span>
 			
 		</form>

@@ -97,5 +97,6 @@
 	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/hibernate-validator-6.1.0.Final.jar"/>
 	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/smoothness-1.0.10.jar"/>
 	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/delta-1.0.10.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/postgresql-9.4.1212.jar"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>
