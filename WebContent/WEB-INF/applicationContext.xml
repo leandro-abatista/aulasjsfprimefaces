@@ -155,7 +155,7 @@
 	
 	
 	<!-- Classes Controller -->
-	
+	<bean id="sessionController" class="br.com.project.geral.controller.SessionControllerImpl" scope="singleton"/>
 	
 	<!-- Classes Repository -->
 	
