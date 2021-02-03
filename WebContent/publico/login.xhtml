@@ -32,8 +32,6 @@
 		
 		<h:panelGroup rendered="#{!empty param.login_error}">
 
-			<!--Motivo: #{SPRING_SECURITY_LAST_EXCEPTION.message}  -->
-
 			<h:outputLabel
 				rendered="#{SPRING_SECURITY_LAST_EXCEPTION.message == 'Bad credentials'}">
 				<span class="estiloSpan">Permissão Negada, Login ou Senha incorretos. </span>
@@ -44,7 +42,7 @@
 				<span class="estiloSpan">Você está logado em outra sessão. </span>
 				
 				<p:commandButton value="Encerrar"
-				style="height:40px; width:100px; border-radius: 5px; font-weight: bold;"
+				style="height:40px; width:100px; border-radius: 5px; font-weight: bold; fonte-size: 15px;"
 				onclick="invalidarSession('#{request.contextPath}', '/publico/invalidateSession')"/>
 			</h:outputLabel>
 

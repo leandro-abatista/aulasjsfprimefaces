@@ -1,5 +1,5 @@
-function invalidarSession(context, pagina) {
-	document.location = (context + pagina + ".jsf");
+function invalidarSession(context, pagina) { 
+     document.location = (context + pagina + ".jsf");
 }
 
 function validarSenhaLogin() {

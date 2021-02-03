@@ -23,52 +23,55 @@
 
 </h:head>
 
-<h:form id="form" prependId="false">
+<h:form id="formulario" prependId="false">
 
 	<script type="text/javascript" charset="UTF-8">
-		$.noConflit();/*Evita conflito entre bibliotecas*/
+		$.noConflict();/*Evita conflito entre bibliotecas jquery e primefaces*/
 	</script>
 	
 	
 	<h:body>
 	
-		<div id="msgError" class="espacoMensagem">
-			<p:growl id="msg" showDetail="false" sticky="true" redisplay="true" autoUpdate="true" life="500"/>
+		<div id="msgErro" class="espacoMensagem">
+			<p:growl id="msg" showDetail="false" sticky="true" redisplay="true" autoUpdate="true" life="5000"/>
 		</div>
 		
 		<p:dialog header="Encerrar Sessão" widgetVar="dlg" resizable="false" modal="true" closable="false" responsive="false" >
 			
 			<h:panelGrid columns="2" cellpadding="5">
 				<h:outputLabel for="username" value="Login: " />
-				<p:inputText id="username" required="true" label="username" requiredMessage="Informe o login."/>
+				<p:inputText id="username" required="true" label="username" requiredMessage="Informe o login."
+				value="#{loginBeanView.username}"/>
 				
 				<h:outputLabel for="password" value="Senha: " />
-				<p:password id="password" required="true" label="password" requiredMessage="Informe a senha."/>
+				<p:password id="password" required="true" label="password" requiredMessage="Informe a senha."
+				value="#{loginBeanView.password}"/>
 			</h:panelGrid>
+			
+			<br />
 			
 			<f:facet name="footer">
 				<p:commandButton value="Encerrar" style="height: 35px; width: 120px; font-size: 20px; font-weight: bold;"
-				update="form:msg" ajax="true" oncomplete="handleLoginRequest(xhr, status, args)"/>
+				update="formulario:msg" ajax="true" oncomplete="handlerLoginRequest(xhr, status, args)"
+				actionListener="#{loginBeanView.invalidar}"/>
 			</f:facet>
 			
 		</p:dialog>
 
 	</h:body>
 	
-<script>
+	<script>
 		$(function () {
 			PF('dlg').show();
 		}); 
 
 		function handlerLoginRequest(xhr, status, args) {
-
-			/* apenas um teste na tela -> alert(args.msgRetorno);*/
-
+			
 			if(!args.loggedIn){
 				PF('dlg').jq.effect("shake"), {times:5}, 100;
 			} else {
 				PF('dlg').hide();
-				document.location = '#{request.contextPath}' + "/j_spring_security_logout";
+				document.location = '#{request.contextPath}' + "/j_spring_security_logout"
 			}
 		}
 	</script>
